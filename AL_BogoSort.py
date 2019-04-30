@@ -9,6 +9,7 @@ every outer loop iteration.
 
 '''
 def isSorted(arr):
+	# First take the length of array
 	N = len(arr)
 
 	for i in range(N-1):
@@ -17,6 +18,7 @@ def isSorted(arr):
 
 	return True
 def BogoSort(arr, visualize=False):
+	# Counter number of iterations
 	counter = 0
 
 	while True:	
@@ -30,9 +32,8 @@ def BogoSort(arr, visualize=False):
 			break
 	if (visualize):
 		print(arr)
+	#Print number of iterations, because it's intersting...
 	print("Number of shuffles: " + str(counter))
-
-
 
 def testRun():
 	random.seed(time.time())

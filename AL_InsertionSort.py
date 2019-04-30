@@ -12,15 +12,13 @@ def insertionSort(arr, visualize=False):
 	# First take the length of array
 	N = len(arr)
 
-	# Outer loop. After i-th outer iteration, the last i elements are sorted
+	# Outer loop. After i-th outer iteration, the first i elements are sorted
 	for i in range(N):
 		if (visualize):
 			print(arr)
 
-
 		currMin = arr[i]
 		currMinIdx = i
-
 
 		# Inner Loop
 		for j in range(i+1, N):
@@ -44,7 +42,6 @@ def testRun():
 		testArr[i] = random.randrange(100)
 
 	insertionSort(testArr, True)
-
 
 
 testRun()
