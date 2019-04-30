@@ -14,13 +14,15 @@ def bubbleSort(arr, visualize=False):
 
 	# Outer loop. After i-th outer iteration, the last i elements are sorted
 	for i in range(N):
-		# Inner Loop
 		if (visualize):
 			print(arr)
+		# Inner Loop
 		for j in range(1, N-i):
 			if arr[j-1] > arr[j]:
 				arr[j-1], arr[j] = arr[j], arr[j-1]
 
+	if (visualize):
+			print(arr)
 
 def testRun():
 	random.seed(time.time())
