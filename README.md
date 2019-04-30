@@ -4,9 +4,8 @@ This repository contains my implementation of various data structures and algori
 Mainly written in Python 3
 
 ## Data Structures
-- [ ] Task1	
-- [x] Task2
+- [ ] Stack
 
 ## Algorithms
 ### Sorting Algorithms
-- [ ] Insertion Sort
+- [x] Bubble Sort
