@@ -6,6 +6,13 @@ This repository contains my implementation of various data structures and algori
 
 ## Algorithms
 ### Sorting Algorithms
+- [x] Bogo Sort
+   - [x] Python3
+   - [ ] C++
 - [x] Bubble Sort
    - [x] Python3
    - [x] C++
+- [x] Insertion Sort
+   - [x] Python3
+   - [ ] C++
+-
