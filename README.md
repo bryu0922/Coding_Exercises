@@ -8,3 +8,5 @@ Mainly written in Python 3
 - [x] Task2
 
 ## Algorithms
+### Sorting Algorithms
+- [ ] Insertion Sort
