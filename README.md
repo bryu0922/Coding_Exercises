@@ -3,8 +3,8 @@ This repository contains my implementation of various data structures and algori
 
 ## Data Structures
 - [ ] Vector
-   - [x] Python3
-   - [ ] C++
+   - [ ] Python3
+   - [x] C++
 - [ ] Stack
    - [ ] Python3
    - [ ] C++
@@ -13,11 +13,13 @@ This repository contains my implementation of various data structures and algori
 ### Sorting Algorithms
 - [x] Bogo Sort
    - [x] Python3
-   - [ ] C++
+   - [x] C++
 - [x] Bubble Sort
    - [x] Python3
    - [x] C++
-- [ ] Insertion Sort
+- [ ] Merge Sort
    - [x] Python3
    - [ ] C++
--
+- [ ] Selection Sort
+   - [x] Python3
+   - [ ] C++

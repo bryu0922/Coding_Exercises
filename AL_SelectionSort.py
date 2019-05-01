@@ -1,23 +1,33 @@
 import random
 import time
 '''
-BubbleSort
+Selection Sort
 Time complexity: O(N^2)
+
 Inputing visualize = True as a second argument prints out array at
 every outer loop iteration.
+
 '''
-def bubbleSort(arr, visualize=False):
+def selectionSort(arr, visualize=False):
 	# First take the length of array
 	N = len(arr)
 
-	# Outer loop. After i-th outer iteration, the last i elements are sorted
+	# Outer loop. After i-th outer iteration, the first i elements are sorted
 	for i in range(N):
 		if (visualize):
 			print(arr)
+
+		currMin = arr[i]
+		currMinIdx = i
+
 		# Inner Loop
-		for j in range(1, N-i):
-			if arr[j-1] > arr[j]:
-				arr[j-1], arr[j] = arr[j], arr[j-1]
+		for j in range(i+1, N):
+			if arr[j] < currMin:
+				currMin = arr[j]
+				currMinIdx = j
+
+		arr[i], arr[currMinIdx] = arr[currMinIdx], arr[i]
+				
 
 	if (visualize):
 			print(arr)
@@ -31,8 +41,7 @@ def testRun():
 	for i in range(testN):
 		testArr[i] = random.randrange(100)
 
-	bubbleSort(testArr, True)
-
+	selectionSort(testArr, True)
 
 
 testRun()

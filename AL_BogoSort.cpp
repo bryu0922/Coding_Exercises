@@ -7,23 +7,28 @@
 #include <stdlib.h>
 #include <time.h>
 /* BubbleSort
- * Time complexity: O(N^2)
+ * Time complexity: O(N * (N!))
  */
 template<typename T>
-void bubbleSort(std::vector<T> &vec) {
-	// First take the length of array
-	uint N = vec.size();
-
-	//Outer loop. After i-th outer iteration, the last i elements are sorted
-	for (uint i = 0 ; i < N; i++) {
-		// Inner Loop
-		for (uint j = 1; j < (N-i); j++) {
-			if (vec[j-1] > vec[j]) {
-				std::swap(vec[j-1], vec[j]);
-			}
+bool isSorted(std::vector<T> &vec) {
+	for (uint i = 1; i < vec.size(); i++) {
+		if (vec[i] < vec[i-1]) {
+			return false;
 		}
-
 	}
+	return true;
+}
+
+template<typename T>
+void bogoSort(std::vector<T> &vec) {
+	uint counter = 0;
+	while (isSorted(vec) == false) {
+		std::random_shuffle(vec.begin(), vec.end());
+		counter++;
+	}
+	std::cout<<"Sorted after " << counter << " shuffles!" << std::endl;
+	return;
+
 }
 
 template<typename T>
@@ -39,7 +44,7 @@ void print(std::vector<T> vec) {
 int myrandom (int i) { return std::rand()%i;}
 
 void testRun() {
-	int testN = 10;
+	int testN = 8;
 	std::vector<int> testArr(testN);
 	srand(time(0));
 
@@ -49,7 +54,7 @@ void testRun() {
 
 	std::random_shuffle(testArr.begin(), testArr.end(), myrandom);
 	print(testArr);
-	bubbleSort(testArr);
+	bogoSort(testArr);
 	print(testArr);
 	
 }
