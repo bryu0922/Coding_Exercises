@@ -2,12 +2,15 @@
 This repository contains my implementation of various data structures and algorithms that I have implemented as a practice.
 
 ## Data Structures
-- [ ] Vector
-   - [ ] Python3
-   - [x] C++
+- [ ] Linked List
+   - [x] Python3
+   - [ ] C++
 - [ ] Stack
    - [ ] Python3
    - [ ] C++
+- [ ] Vector
+   - [ ] Python3
+   - [x] C++
 
 ## Algorithms
 ### Sorting Algorithms
