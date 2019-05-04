@@ -23,6 +23,14 @@ This repository contains my implementation of various data structures and algori
 - [ ] Merge Sort
    - [x] Python3
    - [ ] C++
+- [ ] Quick Sort
+   - [ ] Python3
+   - [x] C++
 - [ ] Selection Sort
+   - [x] Python3
+   - [ ] C++
+
+### Selection Algorithms
+- [ ] Naive Select O(N^2)
    - [x] Python3
    - [ ] C++
