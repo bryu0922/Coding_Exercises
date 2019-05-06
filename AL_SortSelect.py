@@ -1,32 +1,23 @@
 import copy
 import random
 import time
+import AL_MergeSort as ms
 
 '''
-Naive Select
+Sort Select
 Author: Brian K. Ryu
-Time complexity: O(N^2)
+Time complexity: O(N*log(N))
 
 Find k-th smallest element by finding all the 1,2,...,k-th smallest element
+
+First perform a mergesort and then return value
 '''
-def naiveSelect(arr, k):
-	# First take the length of array
-	N = len(arr)
+def sortSelect(arr, k):
 	arrCpy = copy.deepcopy(arr)
+	ms.mergeSort(arrCpy)
 	
-	# For first k smallest element
-	for i in range(k):
-		currMinVal = arrCpy[i]
-		currMinIdx = i
-
-		#Find minimum
-		for j in range(i,N):
-			if arrCpy[j] < currMinVal:
-				currMinVal = arrCpy[j]
-				currMinIdx = j
-		arrCpy[i], arrCpy[currMinIdx] = arrCpy[currMinIdx],  arrCpy[i]
-
 	return arrCpy[k-1]
+
 
 def testRun():
 	random.seed(time.time())
@@ -41,7 +32,7 @@ def testRun():
 	print(testArr)
 	k = 4
 	print("k = " + str(k))
-	print('k-th smallest = ' + str(naiveSelect(testArr, k)))
+	print('k-th smallest = ' + str(sortSelect(testArr, k)))
 
 	print("Sorted array is: ")
 	testArr.sort()

@@ -31,6 +31,14 @@ This repository contains my implementation of various data structures and algori
    - [ ] C++
 
 ### Selection Algorithms
-- [ ] Naive Select O(N^2)
+- [ ] Partial Sort Select O(kN)
    - [x] Python3
    - [ ] C++
+
+- [ ] Sort Select O(N*log(N))
+   - [x] Python3
+   - [ ] C++
+
+- [ ] Quick Select O(N)
+   - [ ] Python3
+   - [ ] C++   
