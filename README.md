@@ -40,5 +40,5 @@ This repository contains my implementation of various data structures and algori
    - [ ] C++
 
 - [ ] Quick Select O(N)
-   - [ ] Python3
+   - [x] Python3
    - [ ] C++   
