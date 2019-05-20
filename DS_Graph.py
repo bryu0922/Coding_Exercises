@@ -66,11 +66,21 @@ class Graph:
 			return None
 		return self.nodes_[idx]
 
-	def edge(self, idx):
-		return self.edges_[idx]
+	def edge(self, idx): #Works
+		currentSum = 0
+		for i in range(len(self.edges_)):
+			toAdd = len(self.edges_[i])
+			if currentSum + toAdd > idx:
+				return self.edges_[i][idx - (currentSum + toAdd)]
+			else:
+				currentSum += toAdd
+		return None
 
-	def num_edges(self):
-		return 0
+	def num_edges(self): #Works
+		totalEdges = 0
+		for i in range(len(self.edges_)):
+			totalEdges += len(self.edges_[i])
+		return int(totalEdges/2)
 
 	def has_edge(self, node1, node2): #Works
 		n1_idx = node1.index()
@@ -131,5 +141,7 @@ print(g.node(1))
 g.add_edge(g.node(0), g.node(3))
 print((g.edges_))
 g.add_edge(g.node(1), g.node(3))
+g.add_edge(g.node(2), g.node(3))
+print((g.num_edges()))
 print((g.edges_))
-
+print(g.edge(3))
