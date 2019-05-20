@@ -32,79 +32,82 @@ class Edge:
 		self.weight_ = weight
 		return
 
-	def node1():
+	def node1(self):
 		return self.node1_
 
-	def node2():
+	def node2(self):
 		return self.node2_
 
-	def weight():
+	def weight(self):
 		return self.weight_
 
 class Graph:
-	def __init__(self):
+	def __init__(self): #Works
 		self.nodes_ = []
 		self.edges_ = []
 		return
 
-	def size(self):
+	def size(self): #Works
 		return len(self.nodes_)
 
-	def num_nodes(self):
+	def num_nodes(self): #Works
 		return self.size()
 
-	def add_node(self, value):
+	def add_node(self, value): #Works
 		newNode = Node(value, len(self.nodes_), self)
 		self.nodes_.append(newNode)
 		return
 
-	def has_node(self, node):
+	def has_node(self, node): #Works
 		return node.homeGraph_ == self
 
-	def node(self, idx):
+	def node(self, idx): #Works
+		if idx >= len(self.nodes_):
+			return None
 		return self.nodes_[idx]
 
 	def edge(self, idx):
 		return self.edges_[idx]
 
-	def has_edge(self, node1, node2):
+	def num_edges(self):
+		return 0
+
+	def has_edge(self, node1, node2): #Works
 		n1_idx = node1.index()
 		n2_idx = node2.index()
 
-		n1_neighbors = len(self.edges_[n1_idx])
-		for i in range(n1_neighbors):
-			currEdge = self.edges_[n1_idx][i]
-			if currEdge.node2() == node2:
-				return true
+		for i in range(len(self.edges_)):
+			# For each node
+			currList = self.edges_[i]
 
-		n2_neighbors = len(self.edges_[n2_idx])
-		for i in range(n2_neighbors):
-			currEdge = self.edges_[n2_idx][i]
-			if currEdge.node2() == node1:
-				return true
+			for j in range(len(currList)):
+				if ((self.edges_[i][j]).node1().index() ==  n1_idx and self.edges_[i][j].node2().index() == n2_idx) or (self.edges_[i][j].node1().index() ==  n2_idx and self.edges_[i][j].node2().index() == n1_idx):
+					return True
 
-		return
+		return False
 
-	def add_edge(self, node1, node2, weight = None):
+	def add_edge(self, node1, node2, weight = None): #Works
 		if (self.has_edge(node1, node2)):
 			return
 		# Edge does not exist
 		n1_idx = node1.index()
 		n2_idx = node2.index()
 
-		while len(self.edges_) < n1_idx:
+		while len(self.edges_) <= n1_idx:
 			self.edges_.append([])
-		while len(self.edges_) < n2_idx:
+		while len(self.edges_) <= n2_idx:
 			self.edges_.append([])
 
 		currEdge1 = Edge(node1, node2, weight)
 		currEdge2 = Edge(node2, node1, weight)
 
+		self.edges_[n1_idx].append(currEdge1)
+		self.edges_[n2_idx].append(currEdge2)
 		
 
 		return
 
-	def clear():
+	def clear(): #Works
 		del self.nodes_
 		del self.edges_
 		self.nodes_ = []
@@ -113,9 +116,20 @@ class Graph:
 
 
 g = Graph()
-print(g.num_nodes())
+print("Num Nodes: " + str(g.num_nodes()))
 g.add_node(5)
-print(g.num_nodes())
-print(g.node(0).homeGraph_)
-print(g.has_node(g.node(0)))
+g.add_node(7)
+g.add_node(2)
+g.add_node(8)
+g.add_node(1)
+g.add_node(4)
+
+
+print("Num Nodes: " + str(g.size()))
+print(g.node(1))
+
+g.add_edge(g.node(0), g.node(3))
+print((g.edges_))
+g.add_edge(g.node(1), g.node(3))
+print((g.edges_))
 
